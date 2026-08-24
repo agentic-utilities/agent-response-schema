@@ -1,6 +1,6 @@
 {
   "name": "@agentic-utilities/agent-response-schema",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Zod-like schema validation and repair library for Agentic frameworks",
   "type": "module",
   "main": "./dist/index.js",
