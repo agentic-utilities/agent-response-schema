@@ -53,5 +53,9 @@
   "homepage": "https://github.com/agentic-utilities/agent-response-schema#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://buymeacoffee.com/cijaytechnh"
   }
 }
