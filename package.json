@@ -19,7 +19,7 @@
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepare": "npm run build && npm run test"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
