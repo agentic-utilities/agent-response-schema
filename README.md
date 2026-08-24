@@ -1,4 +1,4 @@
-# @aitesthq/agent-response-schema
+# @agentic-utilities/agent-response-schema
 
 A lightweight, Zod-like schema validation and repair library designed specifically for Agentic AI frameworks. 
 
@@ -13,13 +13,13 @@ LLMs frequently hallucinate JSON formatting, miss trailing commas, drop brackets
 ## Installation
 
 ```bash
-npm install github:okeycj/agent-response-schema
+npm install github:agentic-utilities/agent-response-schema
 ```
 
 ## Basic Usage
 
 ```typescript
-import { validateWithRepair, z } from "@aitesthq/agent-response-schema";
+import { validateWithRepair, z } from "@agentic-utilities/agent-response-schema";
 
 const schema = z.object({
   id: z.string().uuid(),
