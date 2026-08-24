@@ -42,5 +42,16 @@
     "anthropic"
   ],
   "author": "Agentic Utilities",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentic-utilities/agent-response-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentic-utilities/agent-response-schema/issues"
+  },
+  "homepage": "https://github.com/agentic-utilities/agent-response-schema#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
