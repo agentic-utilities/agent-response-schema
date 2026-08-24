@@ -1,5 +1,5 @@
 {
-  "name": "agent-response-schema",
+  "name": "@okeycj/agent-response-schema",
   "version": "0.1.1",
   "description": "A Zod-like schema validation and repair library for Agentic frameworks",
   "type": "module",
