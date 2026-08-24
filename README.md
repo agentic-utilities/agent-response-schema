@@ -1,8 +1,11 @@
 # @agentic-utilities/agent-response-schema
 
+[![npm version](https://img.shields.io/npm/v/@agentic-utilities/agent-response-schema.svg)](https://www.npmjs.com/package/@agentic-utilities/agent-response-schema)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A lightweight, Zod-like schema validation and repair library designed specifically for Agentic AI frameworks. 
 
-LLMs frequently hallucinate JSON formatting, miss trailing commas, drop brackets, or output types as strings instead of numbers. This library acts as a robust middle-layer, coercing and repairing messy AI output back into strict TypeScript types.
+LLMs frequently hallucinate JSON formatting, miss trailing commas, drop brackets, or output types as strings instead of numbers. While standard validation libraries like Zod will outright reject these responses, this library acts as a robust middle-layer—coercing and repairing messy AI output back into strict TypeScript types so your agents can keep running.
 
 ## Features
 
@@ -13,7 +16,7 @@ LLMs frequently hallucinate JSON formatting, miss trailing commas, drop brackets
 ## Installation
 
 ```bash
-npm install github:agentic-utilities/agent-response-schema
+npm install @agentic-utilities/agent-response-schema
 ```
 
 ## Basic Usage
@@ -47,8 +50,21 @@ const result = validateWithRepair(schema, rawAIResponse, {
 if (result.success) {
   console.log(result.data); 
   // Output: { id: "123e...", age: 28, isActive: true }
+} else {
+  console.error("Failed to parse and repair AI response:", result.errors);
 }
 ```
 
+## Repair Options
+
+The `validateWithRepair` function takes an optional configuration object to tailor the repair strategies to your LLM's behavior:
+
+| Option | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `extractFromText` | `boolean` | `true` | Attempts to extract JSON blocks (like ` ```json ... ``` `) from conversational LLM output. |
+| `fixMissingBrackets` | `boolean` | `true` | Automatically balances and injects missing `[` or `{` brackets at the start or end of the string. |
+| `coerceTypes` | `boolean` | `true` | Safely casts primitive strings (e.g. `"10"`, `"false"`) into their proper types if the schema requires a `number` or `boolean`. |
+
 ## License
-MIT
+
+[MIT](LICENSE)
